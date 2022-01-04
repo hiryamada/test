@@ -1,22 +1,47 @@
 # Module 1 コンピューティング ソリューションを設計する
 
 
+
+
+
 ## コンピューティングサービスを選択する
 
 
+
+
+
+
+
 ### 比較表/決定表
+
+
 Azureには多数のコンピューティングサービスが存在する。
 
 適切なサービスを選択するためのフローチャートを利用できる。
 https://docs.microsoft.com/ja-jp/azure/architecture/guide/technology-choices/compute-decision-tree
 
+
+
+
 ### IaaS
+
+
+
+
+
 
 
 #### Azure Virtual Machines (VM)
 
 
+
+
+
+
+
 ##### 概要
+
+
 ■概要
 
 - Windows VM: https://docs.microsoft.com/ja-jp/azure/virtual-machines/windows/overview
@@ -136,13 +161,28 @@ https://azure.microsoft.com/ja-jp/pricing/details/virtual-machines/linux/
 - リージョンの選択
 - 使用していない間VMを停止・削除する
 
+
+
+
 ### PaaS
+
+
+
+
+
 
 
 #### Azure App Service
 
 
+
+
+
+
+
 ##### 概要
+
+
 ■概要
 
 - 製品ページ: https://azure.microsoft.com/ja-jp/services/app-service/
@@ -173,13 +213,28 @@ WebアプリやWeb APIをホスティングできるPaaSサービス。VMや言�
   - 「AzureRMWebAppDeployment」タスクを使用
   - https://docs.microsoft.com/ja-jp/azure/devops/pipelines/tasks/deploy/azure-rm-web-app-deployment?view=azure-devops
 
+
+
+
 ### サーバーレス
+
+
+
+
+
 
 
 #### Azure Functions
 
 
+
+
+
+
+
 ##### 概要
+
+
 ■概要
 
 https://docs.microsoft.com/ja-jp/azure/azure-functions/functions-overview
@@ -189,75 +244,175 @@ https://docs.microsoft.com/ja-jp/azure/azure-functions/functions-overview
 - C#、Java、JavaScript、PowerShell、Python、TypeScriptなどを利用できる
 - [Durable Functions](https://docs.microsoft.com/ja-jp/azure/azure-functions/durable/durable-functions-overview?tabs=csharp): ステートフルな処理をサポート
 
+
+
+
 ### コンテナー
+
+
+
+
+
 
 
 #### Azure Container Instances (ACI)
 
 
+
+
+
+
+
 #### Azure Kubernetes Service (AKS)
+
+
+
+
+
 
 
 #### Azure Service Fabric
 
 
+
+
+
+
+
 ### 大規模な並列コンピューティング, HPC
+
+
+
+
+
 
 
 #### Azure Batch
 
 
+
+
+
+
+
 ## プロビジョニング・構成管理
+
+
+
+
+
 
 
 ### ARMテンプレート
 
 
+
+
+
+
+
 ### Azure Bicep
+
+
+
+
+
 
 
 ### VMの構成
 
 
+
+
+
+
+
 #### DSC機能拡張
+
+
+
+
+
 
 
 #### カスタムスクリプト機能拡張
 
 
+
+
+
+
+
 ### サードパーティ
+
+
+
+
+
 
 
 #### Chef
 
 
+
+
+
+
+
 #### Puppet
+
+
+
+
+
 
 
 #### Ansible
 
 
+
+
+
+
+
 #### Terraform
+
+
+
+
+
 
 
 ### Azure Automation
 
 
+
+
+
+
+
 #### 概要
-1. プロセス自動化
+
+
+- プロセス自動化
   - Runbook（スクリプト）を管理、実行
   - たとえばサーバーの起動・停止・スケーリングなどを自動化
-2. 構成管理
+- 構成管理
   - サーバーの「望ましい状態」を宣言、適用 - SC
   - サーバーのファイル等の変更を記録 - 変更履歴
   - サーバーの構成をクエリ - インベントリ
-3. 更新管理
+- 更新管理
   - サーバーに「更新プログラム」を適用
 
 2014/10/28 一般提供開始
 https://azure.microsoft.com/en-us/updates/general-availability-azure-automation/
 
+
+
+
 #### プロセス自動化 - Runbook
+
+
 ■Runbookとは
 
 PythonスクリプトやPowerShellスクリプトを自動的に実行する機能。
@@ -300,13 +455,28 @@ Runbookが開始されると「ジョブ」が作成される
 - Hybrid Runbook Worker
   - オンプレミスのデータセンターや他のクラウドでホストされる環境
 
+
+
+
 #### 構成管理
 
 
+
+
+
+
+
 ##### Azure Automation State Configration
+
+
 任意のクラウドまたはオンプレミスのデータセンターのノードについて PowerShell Desired State Configuration (DSC) の構成を記述、管理、およびコンパイルできる Azure 構成管理サービス
 
+
+
+
 ##### 変更履歴とインベントリ
+
+
 ■変更履歴
 Linux と Windows の仮想マシンおよびサーバー インフラストラクチャの変更を追跡できます。 
 
@@ -316,10 +486,20 @@ Linux と Windows の仮想マシンおよびサーバー インフラストラ�
 
 ゲスト リソースでクエリを実行して、インストール済みのアプリケーションやその他の構成アイテムを可視化できます。
 
+
+
+
 #### 更新管理
 
 
+
+
+
+
+
 ##### Azure Automation Update Management
+
+
 https://docs.microsoft.com/ja-jp/azure/automation/update-management/overview
 
 OSの更新プログラムを管理。
@@ -333,15 +513,30 @@ OSの更新プログラムを管理。
 
 デプロイ スケジュールを作成して、定義済みのメンテナンス期間中に更新プログラムがインストールされるように調整できます。
 
+
+
+
 #### 価格
+
+
 https://azure.microsoft.com/ja-jp/pricing/details/automation/
 
 プロセス自動化、構成管理、更新管理の料金が発生。
 
+
+
+
 ### Azure Automanage
 
 
+
+
+
+
+
 #### 概要
+
+
 https://azure.microsoft.com/ja-jp/services/azure-automanage/
 
 VM 管理のベスト プラクティスを自動的に実装。
@@ -358,4 +553,7 @@ https://techcommunity.microsoft.com/t5/azure-governance-and-management/azure-aut
 
 2021/6/29 Azure Arc enabled serversに対応
 https://azure.microsoft.com/ja-jp/updates/automanage-arc/
+
+
+
 
